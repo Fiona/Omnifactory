@@ -2,19 +2,6 @@ import mods.gregtech.recipe.RecipeMap;
 import mods.gregtech.material.MaterialRegistry;
 import crafttweaker.item.IItemStack;
 
-val alloy = RecipeMap.getByName("alloy_smelter");
-val wiremill = RecipeMap.getByName("wiremill");
-val assembler = RecipeMap.getByName("assembler");
-val reactor = RecipeMap.getByName("chemical_reactor");
-val mixer = RecipeMap.getByName("mixer");
-val autoclave = RecipeMap.getByName("autoclave");
-val blast_furnace = RecipeMap.getByName("blast_furnace");
-val macerator = RecipeMap.getByName("macerator");
-val electrolyzer = RecipeMap.getByName("electrolyzer");
-val solidifier = RecipeMap.getByName("fluid_solidifier");
-val compressor = RecipeMap.getByName("compressor");
-val centrifuge = RecipeMap.getByName("centrifuge");
-
 //Plantball
 recipes.addShaped(<gregtech:meta_item_2:32570>, [
 	[<ore:treeLeaves>,<ore:treeLeaves>,<ore:treeLeaves>],
@@ -29,6 +16,7 @@ recipes.addShaped(<gregtech:meta_item_2:32570>, [
 	[<ore:treeSapling>,null,<ore:treeSapling>],
 	[<ore:treeSapling>,<ore:treeSapling>,<ore:treeSapling>]]);
 furnace.addRecipe(<minecraft:slime_ball> * 2, <gregtech:meta_item_2:32570>, 0.0);
+
 
 //Mining Hammers
 <thermalfoundation:tool.hammer_stone>.displayName = "Stone Mining Hammer";
@@ -250,7 +238,6 @@ recipes.addShaped(<enderio:item_liquid_conduit:1> * 4, [
 	[<minecraft:glass>,<minecraft:glass>,<minecraft:glass>],
 	[<ore:itemConduitBinder>, <ore:itemConduitBinder>, <ore:itemConduitBinder>]]);
 assembler.recipeBuilder().inputs([<minecraft:glass> * 3, <ore:itemConduitBinder> * 6]).outputs([<enderio:item_liquid_conduit:1> * 8]).duration(80).EUt(16).buildAndRegister();
-macerator.recipeBuilder().inputs([<ore:logWood>]).outputs([<thermalfoundation:material:800> * 2]).duration(80).EUt(8).buildAndRegister();
 macerator.recipeBuilder().inputs([<minecraft:diamond>]).outputs([<gregtech:meta_item_1:2111>]).duration(80).EUt(8).buildAndRegister();
 macerator.recipeBuilder().inputs([<appliedenergistics2:material:7>]).outputs([<appliedenergistics2:material:8>]).duration(80).EUt(8).buildAndRegister();
 macerator.recipeBuilder().inputs([<enderio:item_material:16>]).outputs([<enderio:item_material:37>]).duration(500).EUt(16).buildAndRegister();

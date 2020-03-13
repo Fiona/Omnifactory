@@ -1,17 +1,5 @@
 import mods.gregtech.recipe.RecipeMap;
 
-val alloy = RecipeMap.getByName("alloy_smelter");
-val wiremill = RecipeMap.getByName("wiremill");
-val assembler = RecipeMap.getByName("assembler");
-val hammer = RecipeMap.getByName("forge_hammer");
-val reactor = RecipeMap.getByName("chemical_reactor");
-val mixer = RecipeMap.getByName("mixer");
-val autoclave = RecipeMap.getByName("autoclave");
-val blast_furnace = RecipeMap.getByName("blast_furnace");
-val compressor = RecipeMap.getByName("compressor");
-val macerator = RecipeMap.getByName("macerator");
-
-
 //Machine Structure
 recipes.remove(<libvulpes:structuremachine>);
 recipes.addShaped(<libvulpes:structuremachine>, [
@@ -51,8 +39,6 @@ recipes.remove(<advancedrocketry:structuretower>);
 recipes.addShaped(<advancedrocketry:structuretower> * 3, [[<gregtech:frame_stainless_steel>],[<gregtech:frame_stainless_steel>],[<gregtech:frame_stainless_steel>]]);
 
 //Tanks
-
-// Exa: snipped, use global defs
 
 recipes.remove(<advancedrocketry:pressuretank>);
 recipes.addShaped(<advancedrocketry:pressuretank>, [
@@ -173,12 +159,31 @@ recipes.addShaped(<packagedauto:me_package_component>, [
 	[<gregtech:meta_item_1:12072>, <appliedenergistics2:quartz_glass>, <gregtech:meta_item_1:12072>]]);
 
 
-recipes.remove(<packagedavaritia:extreme_crafter>);
-recipes.addShaped(<packagedavaritia:extreme_crafter>, [
-	[<moreplates:crystal_matrix_plate>, <packagedauto:me_package_component>, <moreplates:crystal_matrix_plate>],
-	[<moreplates:crystal_matrix_plate>, <extendedcrafting:table_ultimate>, <moreplates:crystal_matrix_plate>],
-	[<moreplates:crystal_matrix_plate>, <moreplates:crystal_matrix_plate>, <moreplates:crystal_matrix_plate>]]);
+//PackagedExCrafting
 
+// Advanced 
+recipes.remove(<packagedexcrafting:advanced_crafter>);
+recipes.addShaped(<packagedexcrafting:advanced_crafter>, [
+	[<extendedcrafting:material:15> , <extendedcrafting:interface>                         , <extendedcrafting:material:15>],
+	[<gregtech:meta_item_1:12231>   , <extendedcrafting:table_advanced>.transformDamage(0) , <gregtech:meta_item_1:12231>  ],
+	[<extendedcrafting:material:15> , <packagedauto:me_package_component>                  , <extendedcrafting:material:15>]
+]);
+
+// Elite
+recipes.remove(<packagedexcrafting:elite_crafter>);
+recipes.addShaped(<packagedexcrafting:elite_crafter>, [
+	[<extendedcrafting:material:16> , <extendedcrafting:interface>                      , <extendedcrafting:material:16>],
+	[<gregtech:meta_item_1:12231>   , <extendedcrafting:table_elite>.transformDamage(0) , <gregtech:meta_item_1:12231>  ],
+	[<extendedcrafting:material:16> , <packagedauto:me_package_component>               , <extendedcrafting:material:16>]
+]);
+
+// Ultimate
+recipes.remove(<packagedexcrafting:ultimate_crafter>);
+recipes.addShaped(<packagedexcrafting:ultimate_crafter>, [
+	[<extendedcrafting:material:17> , <extendedcrafting:interface>                         , <extendedcrafting:material:17>],
+	[<gregtech:meta_item_1:12231>   , <extendedcrafting:table_ultimate>.transformDamage(0) , <gregtech:meta_item_1:12231>  ],
+	[<extendedcrafting:material:17> , <packagedauto:me_package_component>                  , <extendedcrafting:material:17>]
+]);
 
 alloy.recipeBuilder().inputs([<gregtech:meta_item_1:2035>,<gregtech:meta_item_1:2138> * 4]).outputs([<thermalfoundation:glass:3>]).duration(100).EUt(30).buildAndRegister();
 
@@ -303,7 +308,7 @@ recipes.addShaped(<advancedrocketry:fuelingstation>, [
 <advancedrocketry:fuelingstation>.displayName = "Fueling Station";
 
 macerator.recipeBuilder().inputs([<libvulpes:ore0>]).outputs([<libvulpes:productdust> * 2]).duration(200).EUt(420).buildAndRegister();
-autoclave.recipeBuilder().inputs([<libvulpes:productdust> * 4]).fluidInputs(<liquid:deuterium> * 1000).outputs([<libvulpes:productcrystal> * 4]).duration(400).EUt(110).buildAndRegister();
+autoclave.recipeBuilder().inputs([<libvulpes:productdust> * 4]).fluidInputs(<liquid:deuterium> * 1000).outputs([<ore:gemDilithium>.firstItem * 4]).duration(400).EUt(110).buildAndRegister();
 
 recipes.remove(<advancedrocketry:stationbuilder>);
 mods.extendedcrafting.TableCrafting.addShaped(<advancedrocketry:stationbuilder>, [
@@ -343,3 +348,34 @@ recipes.addShaped(<advancedrocketry:warpcore>, [
 	[<gregtech:compressed_3:10>, <extendedcrafting:storage:2>, <gregtech:compressed_3:10>],
 	[<thermalfoundation:storage_alloy:6>, <gregtech:compressed_3:10>, <thermalfoundation:storage_alloy:6>]]);
 
+/*
+
+  Removals
+
+*/
+
+recipes.remove(<advancedrocketry:blockpump>);             // Fluid Pump
+mods.jei.JEI.removeAndHide(<advancedrocketry:blockpump>); // Fluid Pump
+recipes.remove(<advancedrocketry:centrifuge>);             // Centrifuge
+mods.jei.JEI.removeAndHide(<advancedrocketry:centrifuge>); // Centrifuge
+mods.jei.JEI.removeAndHide(<advancedrocketry:basalt>);       // Basalt
+mods.jei.JEI.removeAndHide(<advancedrocketry:landingfloat>); // Landing Float
+mods.jei.JEI.removeAndHide(<advancedrocketry:airlock_door>); // Airlock Door (Technical Block)
+mods.jei.JEI.removeAndHide(<advancedrocketry:lightsource>);  // Light source (Technical Block)
+mods.jei.JEI.removeAndHide(<advancedrocketry:astrobed>);     // Astrobed     (Technical Block)
+
+// Various unused satellite sensors
+mods.jei.JEI.removeAndHide(<advancedrocketry:satelliteprimaryfunction:2>);
+mods.jei.JEI.removeAndHide(<advancedrocketry:satelliteprimaryfunction:3>);
+mods.jei.JEI.removeAndHide(<advancedrocketry:satelliteprimaryfunction:4>);
+mods.jei.JEI.removeAndHide(<advancedrocketry:satelliteprimaryfunction:5>);
+recipes.remove(<advancedrocketry:satelliteprimaryfunction:2>);
+recipes.remove(<advancedrocketry:satelliteprimaryfunction:3>);
+recipes.remove(<advancedrocketry:satelliteprimaryfunction:4>);
+recipes.remove(<advancedrocketry:satelliteprimaryfunction:5>);
+
+// Unused Chips
+mods.jei.JEI.removeAndHide(<advancedrocketry:ic:1>);
+mods.jei.JEI.removeAndHide(<advancedrocketry:satelliteidchip>);
+recipes.remove(<advancedrocketry:ic:1>);
+recipes.remove(<advancedrocketry:satelliteidchip>);

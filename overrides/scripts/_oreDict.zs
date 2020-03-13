@@ -357,6 +357,16 @@ var dustsDisabled as IItemStack[][IOreDictEntry] = {
 	#dustTitanium
 	<ore:dustTitanium> : [
 		<libvulpes:productdust:7>
+	],
+
+	#dustWood
+	<ore:dustWood>: [
+		<thermalfoundation:material:800>
+	],
+
+	#itemSawdust
+	<ore:itemSawdust>: [
+		<thermalfoundation:material:800>
 	]
 
 };
@@ -918,7 +928,6 @@ var gearsDisabled as IItemStack[][IOreDictEntry] = {
 	#gearWood
 	<ore:gearWood> : [
 		<appliedenergistics2:material:40>,
-		<enderio:item_material:9>,
 		<thermalfoundation:material:22>
 	]
 };
@@ -975,7 +984,7 @@ for oreDictEntry, items in miscDisabled {
 <ore:oreEmerald>.add(<minecraft:emerald_ore>);
 <ore:oreNetherQuartz>.add(<minecraft:quartz_ore>);
 
-
+<ore:blockAluminum>.add(<gregtech:compressed_0:0>);
 
 ////////////////////////////////
 //			Removals          //
@@ -1003,18 +1012,6 @@ mods.jei.JEI.hideCategory("xu2_machine_extrautils2:crusher");
 mods.jei.JEI.hideCategory("xu2_machine_extrautils2:generator_survival");
 mods.jei.JEI.hideCategory("xu2_machine_extrautils2:generator");
 mods.jei.JEI.hide(<appliedenergistics2:facade>);
-
-//Forestry Removals
-mods.jei.JEI.removeAndHide(<forestry:phosphor>);
-mods.jei.JEI.removeAndHide(<forestry:ash>);
-mods.jei.JEI.removeAndHide(<forestry:wood_pulp>);
-mods.jei.JEI.removeAndHide(<forestry:mulch>);
-mods.jei.JEI.removeAndHide(<forestry:beeswax>);
-mods.jei.JEI.removeAndHide(<forestry:refractory_wax>);
-mods.jei.JEI.removeAndHide(<forestry:fertilizer_bio>);
-mods.jei.JEI.removeAndHide(<forestry:soldering_iron>);
-mods.jei.JEI.removeAndHide(<forestry:ash_brick>);
-mods.jei.JEI.removeAndHide(<forestry:ash_stairs>);
 
 
 //Actually Additions Removals
@@ -1059,9 +1056,6 @@ mods.jei.JEI.removeAndHide(<actuallyadditions:item_misc:22>);
 
 
 mods.jei.JEI.removeAndHide(<advancedrocketry:charcoallog>);
-mods.jei.JEI.removeAndHide(<advancedrocketry:datapipe>);
-mods.jei.JEI.removeAndHide(<advancedrocketry:energypipe>);
-mods.jei.JEI.removeAndHide(<advancedrocketry:liquidpipe>);
 mods.jei.JEI.removeAndHide(<advancedrocketry:satellitebuilder>);
 mods.jei.JEI.removeAndHide(<advancedrocketry:loader>);
 mods.jei.JEI.removeAndHide(<advancedrocketry:precisionassemblingmachine>);
@@ -1136,8 +1130,6 @@ mods.jei.JEI.removeAndHide(<advancedrocketry:asteroidchip>);
 mods.jei.JEI.removeAndHide(<advancedrocketry:elevatorchip>);
 mods.jei.JEI.removeAndHide(<advancedrocketry:lens>);
 mods.jei.JEI.removeAndHide(<advancedrocketry:basiclasergun>);
-mods.jei.JEI.removeAndHide(<advancedrocketry:itemupgrade>);
-mods.jei.JEI.removeAndHide(<advancedrocketry:itemupgrade:1>);
 mods.jei.JEI.removeAndHide(<advancedrocketry:beaconfinder>);
 mods.jei.JEI.removeAndHide(<advancedrocketry:thermite>);
 mods.jei.JEI.removeAndHide(<advancedrocketry:unlittorch>);
@@ -1255,7 +1247,6 @@ mods.jei.JEI.removeAndHide(<extrautils2:user>);
 mods.jei.JEI.removeAndHide(<extrautils2:contract>);
 mods.jei.JEI.removeAndHide(<enderio:block_cap_bank>);
 mods.jei.JEI.removeAndHide(<enderio:item_capacitor_grainy>);
-mods.jei.JEI.removeAndHide(<enderio:item_capacitor_totemic>);
 mods.jei.JEI.removeAndHide(<enderio:item_capacitor_stellar>);
 mods.jei.JEI.removeAndHide(<enderio:item_capacitor_melodic>);
 mods.jei.JEI.removeAndHide(<enderio:item_capacitor_crystalline>);
@@ -1590,17 +1581,10 @@ mods.jei.JEI.removeAndHide(<theoneprobe:creativeprobe>);
 //Thermal Removals
 mods.jei.JEI.removeAndHide(<thermalexpansion:satchel:32000>);
 mods.jei.JEI.removeAndHide(<thermalexpansion:frame:129>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:frame:130>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:frame:131>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:frame:132>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:frame:146>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:frame:147>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:frame:148>);
 mods.jei.JEI.removeAndHide(<thermalfoundation:upgrade:256>);
 mods.jei.JEI.removeAndHide(<thermalfoundation:material:23>);
 mods.jei.JEI.removeAndHide(<thermalfoundation:material:27>);
 mods.jei.JEI.removeAndHide(<thermalfoundation:material:802>);
-mods.jei.JEI.removeAndHide(<thermalfoundation:material:800>);
 mods.jei.JEI.removeAndHide(<thermalfoundation:material:801>);
 mods.jei.JEI.removeAndHide(<thermalfoundation:material:657>);
 mods.jei.JEI.removeAndHide(<thermalfoundation:tool.hammer_silver>);
@@ -1660,7 +1644,7 @@ recipes.addShapeless(<thermalfoundation:material:166>, [<gregtech:meta_item_1:10
 recipes.addShapeless(<thermalfoundation:material:165>, [<gregtech:meta_item_1:10707>]);
 recipes.addShapeless(<draconicevolution:draconium_ingot>, [<gregtech:meta_item_1:10710>]);
 recipes.addShapeless(<draconicevolution:draconium_dust>, [<gregtech:meta_item_1:2710>]);
-
+recipes.addShapeless(<ore:dustWood>.firstItem, [<thermalfoundation:material:800>]);
 
 
 
@@ -1828,6 +1812,27 @@ recipes.addShapeless(<gregtech:meta_item_1:10237>, [<enderio:item_alloy_ingot:3>
 <ore:dustEnderium>.remove(<thermalfoundation:material:103>);
 <ore:dustSignalum>.remove(<thermalfoundation:material:101>);
 
+//Questbook things
+<ore:questbookBrewery>.add(<gregtech:machine:130>); // LV Brewery
+<ore:questbookBrewery>.add(<gregtech:machine:131>); // MV Brewery
+
+<ore:questbookDistillery>.add(<gregtech:machine:230>); // LV Distillery
+<ore:questbookDistillery>.add(<gregtech:machine:231>); // MV Distillery
+
+<ore:questbookCentrifuge>.add(<gregtech:machine:150>); // LV Centrifuge
+<ore:questbookCentrifuge>.add(<gregtech:machine:151>); // MV Centrifuge
+<ore:questbookCentrifuge>.add(<gregtech:machine:152>); // HV Centrifuge
+
+<ore:questbookPolarizer>.add(<gregtech:machine:420>); // LV Polarizer
+<ore:questbookPolarizer>.add(<gregtech:machine:421>); // MV Polarizer (why)
+
+<ore:questbookAirCollector>.add(<gregtech:machine:950>); // LV Air Succ
+<ore:questbookAirCollector>.add(<gregtech:machine:960>); // MV Air Succ
+<ore:questbookAirCollector>.add(<gregtech:machine:970>); // HV Air Succ
+<ore:questbookAirCollector>.add(<gregtech:machine:980>); // EV Air Succ
+
+<ore:questbookCanning>.add(<gregtech:machine:140>); // LV Canning
+<ore:questbookCanning>.add(<gregtech:machine:141>); // MV Canning
 
 //Extra EnderIO Stuff
 mods.jei.JEI.removeAndHide(<gregtech:meta_item_1:10700>);
